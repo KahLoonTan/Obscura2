@@ -21,8 +21,6 @@ public class TileManager : MonoBehaviour {
 	private float oldLat, oldLon;
 	private float lat,lon;
 
-	public GameObject Text1, Text2, Text3;
-
 	IEnumerator Start() {
 		while (!Input.location.isEnabledByUser) {
 			print ("Activate gps");
@@ -101,8 +99,6 @@ public class TileManager : MonoBehaviour {
 			position.z *= 0.123043f;
 
 			target.position = position;
-			Text1.GetComponent<TextMesh> ().text ="Target Position-> \n" + target.position;
-			Text3.GetComponent<TextMesh> ().text = "Lat-> " + Input.location.lastData.latitude + "\n" + "Lon-> " + Input.location.lastData.longitude;
 			print ("position-> " + position);
 		}
 		tile.GetComponent<Renderer> ().material.mainTexture = texture;
@@ -206,7 +202,6 @@ public class TileManager : MonoBehaviour {
 	void Update () {
 		//service.SetActive (!Input.location.isEnabledByUser);
 		print("Update pos-> " + target.position);
-		Text2.GetComponent<TextMesh> ().text ="Target Position in Update -> \n" + target.position;
 
 		target.position = Vector3.Lerp (target.position, new Vector3 (0, 0.25f, 0), 2.0f * Time.deltaTime);
 

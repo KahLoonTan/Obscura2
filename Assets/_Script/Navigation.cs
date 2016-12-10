@@ -27,8 +27,7 @@ public class Navigation : MonoBehaviour {
 	public void diary(){
 		Application.LoadLevel("Diary");
 	}
-	
-	public void map(){
-			Application.LoadLevel ("Map");
+	public void openMap(){
+		Application.LoadLevel ("Map");
 	}
 }
