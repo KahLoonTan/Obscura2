@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4C363F3F-15D1-DCA8-F7C9-3AF0D0F4CB5F}</ProjectGuid>
+    <ProjectGuid>{309808AB-97AF-D00B-868F-24DE3108C63C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -217,6 +217,7 @@
      <Compile Include="Assets\_Script\TapAI.cs" />
      <Compile Include="Assets\_Script\Tutorial.cs" />
      <Compile Include="Assets\_Script\TutorialController.cs" />
+     <Compile Include="Assets\_Script\obscura2\CheckPoint.cs" />
      <Compile Include="Assets\_Script\obscura2\Navigation_3d.cs" />
      <Compile Include="Assets\_Script\obscura2\TileManager.cs" />
      <Compile Include="Assets\_Script\takepuc.cs" />

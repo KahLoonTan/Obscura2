@@ -21,6 +21,16 @@ public class TileManager : MonoBehaviour {
 	private float oldLat, oldLon;
 	private float lat,lon;
 
+	public float getLat
+	{
+		get{ return lat;}
+
+	}
+	public float getLon
+	{
+		get{ return lon; }
+	}
+
 	IEnumerator Start() {
 		while (!Input.location.isEnabledByUser) {
 			print ("Activate gps");
@@ -91,6 +101,8 @@ public class TileManager : MonoBehaviour {
 
 			if ((oldLat - lat) < 0 && (oldLon - lon) > 0 || (oldLat - lat) > 0 && (oldLon - lon) < 0) {
 				position = new Vector3 (x, 0.25f, y);
+			} else if ((oldLat - lat) == 0 && (oldLon - lon) == 0) {
+				//do nothing
 			} else {
 				position = new Vector3 (-x, 0.25f, -y);
 			}
