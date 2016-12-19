@@ -20,6 +20,7 @@ public class TileManager : MonoBehaviour {
 
 	private float oldLat, oldLon;
 	private float lat,lon;
+	public SpawnManager spawnManager;
 
 	public float getLat
 	{
@@ -113,6 +114,9 @@ public class TileManager : MonoBehaviour {
 			target.position = position;
 			print ("position-> " + position);
 		}
+
+		spawnManager.UpdateMonsterPosition ();
+
 		tile.GetComponent<Renderer> ().material.mainTexture = texture;
 
 		yield return new WaitForSeconds (1f);

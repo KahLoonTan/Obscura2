@@ -218,7 +218,9 @@
      <Compile Include="Assets\_Script\Tutorial.cs" />
      <Compile Include="Assets\_Script\TutorialController.cs" />
      <Compile Include="Assets\_Script\obscura2\CheckPoint.cs" />
+     <Compile Include="Assets\_Script\obscura2\Monster.cs" />
      <Compile Include="Assets\_Script\obscura2\Navigation_3d.cs" />
+     <Compile Include="Assets\_Script\obscura2\SpawnManager.cs" />
      <Compile Include="Assets\_Script\obscura2\TileManager.cs" />
      <Compile Include="Assets\_Script\takepuc.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
