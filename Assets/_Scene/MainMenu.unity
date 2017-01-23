@@ -977,7 +977,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -999,7 +999,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!1 &1079763629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 587798035}
-  functionName: openMap
+  functionName: levelSelection
   trigger: 0
   includeChildren: 0
 --- !u!1 &1173642642

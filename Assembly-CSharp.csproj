@@ -55,10 +55,37 @@
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\MotionBlur.cs" />
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\NoiseEffect.cs" />
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\SSAOEffect.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Antialiasing.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Bloom.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\BloomAndFlares.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\BloomOptimized.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\BlurOptimized.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\CameraMotionBlur.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\ColorCorrectionCurves.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\ColorCorrectionLookup.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\ContrastEnhance.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\CreaseShading.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\DepthOfField.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\DepthOfFieldDeprecated.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\EdgeDetection.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Fisheye.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\GlobalFog.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\NoiseAndGrain.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\PostEffectsBase.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\PostEffectsHelper.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Quads.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\ScreenOverlay.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\ScreenSpaceAmbientObscurance.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\SunShafts.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\TiltShift.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Tonemapping.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\Triangles.cs" />
+     <Compile Include="Assets\Filters\Image Effects (Pro Only)\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\SepiaToneEffect.cs" />
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\TwirlEffect.cs" />
      <Compile Include="Assets\Filters\Image Effects (Pro Only)\VortexEffect.cs" />
      <Compile Include="Assets\Filters\Night Vision\NightVisionEffect.cs" />
+     <Compile Include="Assets\Medieval Pack\Scripts\CameraBehaviour.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -191,6 +218,8 @@
      <Compile Include="Assets\UnityChan\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\UnityChan\Scripts\ThirdPersonCamera.cs" />
      <Compile Include="Assets\UnityChan\Scripts\UnityChanControlScriptWithRgidBody.cs" />
+     <Compile Include="Assets\ZRNAssets\PQAssets\Query-Chan-SD\Fukuoka_Props\Dashi\Scripts\RotateProp.cs" />
+     <Compile Include="Assets\ZRNAssets\PQAssets\Query-Chan-SD\Fukuoka_Props\Sounds\MatsuriSoundController.cs" />
      <Compile Include="Assets\_Script\AudioCenter.cs" />
      <Compile Include="Assets\_Script\AudioController.cs" />
      <Compile Include="Assets\_Script\BatteryLife.cs" />
@@ -223,11 +252,16 @@
      <Compile Include="Assets\_Script\TapAI.cs" />
      <Compile Include="Assets\_Script\Tutorial.cs" />
      <Compile Include="Assets\_Script\TutorialController.cs" />
+     <Compile Include="Assets\_Script\obscura2\AdjustSlider.cs" />
+     <Compile Include="Assets\_Script\obscura2\CharacterMovement.cs" />
      <Compile Include="Assets\_Script\obscura2\CheckPoint.cs" />
      <Compile Include="Assets\_Script\obscura2\Coin.cs" />
      <Compile Include="Assets\_Script\obscura2\CoinManager.cs" />
      <Compile Include="Assets\_Script\obscura2\CoinRotate.cs" />
+     <Compile Include="Assets\_Script\obscura2\EnterCamera.cs" />
      <Compile Include="Assets\_Script\obscura2\FindPlaceType.cs" />
+     <Compile Include="Assets\_Script\obscura2\Floating.cs" />
+     <Compile Include="Assets\_Script\obscura2\LevelController.cs" />
      <Compile Include="Assets\_Script\obscura2\MapObjMovement.cs" />
      <Compile Include="Assets\_Script\obscura2\Monster.cs" />
      <Compile Include="Assets\_Script\obscura2\MonsterManager.cs" />
@@ -236,23 +270,29 @@
      <Compile Include="Assets\_Script\obscura2\PokemonManager.cs" />
      <Compile Include="Assets\_Script\obscura2\SpawnManager.cs" />
      <Compile Include="Assets\_Script\obscura2\TileManager.cs" />
+     <Compile Include="Assets\_Script\obscura2\TouchReceiver.cs" />
      <Compile Include="Assets\_Script\takepuc.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\NGUI\ReadMe - 3.4.9.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Medieval Pack\ReadMe.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (SoftClip).shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\ZRNAssets\005030_06196_1_1\Shaders\su_Zmap_river02.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\ZRNAssets\005030_06196_1_1\Shaders\su_Zmap_DoubleSide.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
@@ -260,6 +300,9 @@
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\NatureStarterKit2\info.txt" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\Projectors\Guidelines.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\MotionBlur.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBloom.shader" />
@@ -274,7 +317,9 @@
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset3.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\ZRNAssets\005030_06196_1_1\Documents\ReadMe.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\UnityChan\license.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\frag_ao.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
@@ -283,9 +328,11 @@
      <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku_ds.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye_blend.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
+     <None Include="Assets\ZRNAssets\005030_06196_1_1\Shaders\su_Zmap_way.shader" />
      <None Include="Assets\Filters\Night Vision\NightVisionEffectShader.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair_ds.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -298,14 +345,20 @@
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\CreaseApply.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
+     <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\ZRNAssets\PQAssets\Query-Chan-SD\Documents\ReadMe.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ChromaticAberrationShader.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
+     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\GlobalFog.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\ZRNAssets\PQAssets\Query-Chan-SD\license_en.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\Bokeh34.shader" />
@@ -313,12 +366,14 @@
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\NGUI\Examples\Other\English.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
      <None Include="Assets\NGUI\Examples\Other\French.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\DLAA.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrainDX11.shader" />
@@ -334,6 +389,8 @@
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\Contrast Stretch\Adaptation.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
+     <None Include="Assets\ZRNAssets\PQAssets\Query-Chan-SD\license_jp.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\VignettingShader.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\Tonemapper.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
@@ -347,10 +404,13 @@
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\PrepareSunShaftsBlur.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
+     <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\SimpleClear.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
+     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
      <None Include="Assets\Filters\Image Effects (Pro Only)\_Sources\Shaders\_Antialiasing\FXAAPreset2.shader" />
@@ -362,6 +422,10 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity_5.3.5/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{F18CCF53-05B1-25FC-FE9B-7CEF655A5D74}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,7 +9,7 @@ Shader "Hidden/BlendModesOverlay" {
 	#include "UnityCG.cginc"
 	
 	struct v2f {
-		float4 pos : POSITION;
+		float4 pos : SV_POSITION;
 		float2 uv[2] : TEXCOORD0;
 	};
 			
@@ -38,22 +38,22 @@ Shader "Hidden/BlendModesOverlay" {
 		return o;
 	}
 	
-	half4 fragAddSub (v2f i) : COLOR {
+	half4 fragAddSub (v2f i) : SV_Target {
 		half4 toAdd = tex2D(_Overlay, i.uv[0]) * _Intensity;
 		return tex2D(_MainTex, i.uv[1]) + toAdd;
 	}
 
-	half4 fragMultiply (v2f i) : COLOR {
+	half4 fragMultiply (v2f i) : SV_Target {
 		half4 toBlend = tex2D(_Overlay, i.uv[0]) * _Intensity;
 		return tex2D(_MainTex, i.uv[1]) * toBlend;
 	}	
 			
-	half4 fragScreen (v2f i) : COLOR {
+	half4 fragScreen (v2f i) : SV_Target {
 		half4 toBlend =  (tex2D(_Overlay, i.uv[0]) * _Intensity);
 		return 1-(1-toBlend)*(1-(tex2D(_MainTex, i.uv[1])));
 	}
 
-	half4 fragOverlay (v2f i) : COLOR {
+	half4 fragOverlay (v2f i) : SV_Target {
 		half4 m = (tex2D(_Overlay, i.uv[0]));// * 255.0;
 		half4 color = (tex2D(_MainTex, i.uv[1]));//* 255.0;
 
@@ -75,9 +75,9 @@ if (Target <= ½) R = (2xTarget) x Blend
 		return half4(lerp(color.rgb, result.rgb, (_Intensity)), color.a);
 	}
 	
-	half4 fragAlphaBlend (v2f i) : COLOR {
+	half4 fragAlphaBlend (v2f i) : SV_Target {
 		half4 toAdd = tex2D(_Overlay, i.uv[0]) ;
-		return lerp(tex2D(_MainTex, i.uv[1]), toAdd, toAdd.a);
+		return lerp(tex2D(_MainTex, i.uv[1]), toAdd, toAdd.a * _Intensity);
 	}	
 
 
@@ -85,13 +85,11 @@ if (Target <= ½) R = (2xTarget) x Blend
 	
 Subshader {
 	  ZTest Always Cull Off ZWrite Off
-	  Fog { Mode off }  
       ColorMask RGB	  
   		  	
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragAddSub
       ENDCG
@@ -100,7 +98,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragScreen
       ENDCG
@@ -109,7 +106,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragMultiply
       ENDCG
@@ -118,7 +114,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragOverlay
       ENDCG
@@ -127,7 +122,6 @@ Subshader {
  Pass {    
 
       CGPROGRAM
-      #pragma fragmentoption ARB_precision_hint_fastest
       #pragma vertex vert
       #pragma fragment fragAlphaBlend
       ENDCG
