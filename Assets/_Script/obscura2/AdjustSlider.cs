@@ -11,13 +11,13 @@ public class AdjustSlider : MonoBehaviour {
 	void Start () {
 		currDistance = PlayerPrefs.GetFloat ("Distance");
 		slider.value = currDistance;
-		distanceRemaining.text = "Distance Remaining:\n" + (1000 - currDistance);
+		distanceRemaining.text = "Distance Remaining:\n" + (100 - currDistance);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		currDistance = PlayerPrefs.GetFloat ("Distance");
 		slider.value = currDistance;
-		distanceRemaining.text = "Distance Remaining:\n" + (1000 - currDistance);
+		distanceRemaining.text = "Distance Remaining:\n" + (100 - currDistance);
 	}
 }

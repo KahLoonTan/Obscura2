@@ -1788,7 +1788,7 @@ GameObject:
   - 114: {fileID: 11494868}
   m_Layer: 0
   m_Name: unitychan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1941,6 +1941,9 @@ GameObject:
   - 92: {fileID: 9295892}
   - 124: {fileID: 12429902}
   - 81: {fileID: 8146726}
+  - 114: {fileID: 11473172}
+  - 114: {fileID: 11496038}
+  - 114: {fileID: 11457030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3052,10 +3055,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164608}
-  m_LocalRotation: {x: 0, y: 0.99658716, z: 0, w: 0.082547165}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 170.53, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 0, z: -3.94}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 476094}
   - {fileID: 477202}
@@ -3546,7 +3549,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101920}
-  m_LocalRotation: {x: -0.093746535, y: 0.6978551, z: 0.707469, w: 0.060806748}
+  m_LocalRotation: {x: -0.093746535, y: 0.6978551, z: 0.707469, w: 0.060806733}
   m_LocalPosition: {x: -0.05543403, y: 0.0017306843, z: 0.098653734}
   m_LocalScale: {x: 1.0000004, y: 1.0000006, z: 1.0000005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3734,10 +3737,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 171542}
-  m_LocalRotation: {x: 0.7046936, y: 0.058369774, z: -0.05836978, w: 0.7046935}
-  m_LocalPosition: {x: 0, y: 5.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.53, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 90, y: 9.469999, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 420974}
   m_RootOrder: 6
@@ -5207,6 +5210,43 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11457030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171542}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b592f41dc3aad7d418eaa98f253ef21b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nightVisionShader: {fileID: 4800000, guid: b35a54978fac17a49a12ba8187f979f6, type: 3}
+  contrast: 2
+  brightness: 1
+  nightVisionColor: {r: 0.5686275, g: 1, b: 0.5529412, a: 1}
+  vignetteTexture: {fileID: 2800000, guid: 1a5c8abba01874367816c0fd5acf472e, type: 3}
+  scanLineTexture: {fileID: 2800000, guid: 4c1c9530acf04a74c8e78f6a7040b16d, type: 3}
+  scanLineTileAmount: 4
+  nightVisionNoise: {fileID: 2800000, guid: f4c52faf832a4284cb57c26ea635e703, type: 3}
+  noiseXSpeed: 100
+  noiseYSpeed: 100
+  distortion: 0.2
+  scale: 0.8
+--- !u!114 &11473172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: daf9781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 0}
+  rampOffset: 0
 --- !u!114 &11483340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5245,11 +5285,23 @@ MonoBehaviour:
   lookSmoother: 3
   useCurves: 1
   useCurvesHeight: 0.5
-  forwardSpeed: 7
+  forwardSpeed: 2
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
   touchReceiver: {fileID: 0}
+--- !u!114 &11496038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 171542}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a07a781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: b6aa781cad112c75d0008dfa8d76c639, type: 3}
 --- !u!114 &11497126
 MonoBehaviour:
   m_ObjectHideFlags: 1

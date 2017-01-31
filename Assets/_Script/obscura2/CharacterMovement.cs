@@ -81,8 +81,9 @@ public class CharacterMovement : MonoBehaviour
 		Vector3 velocity = new Vector3(h, 0.0f, v);
 
 		//transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocity), 0.15F);
-
-
+		Vector3 lookPos = new Vector3(h,0,v);
+		Quaternion targetRotation = Quaternion.LookRotation (lookPos - transform.position);
+		//transform.rotation = targetRotation;
 		transform.Translate (velocity * forwardSpeed * Time.deltaTime);
 
 

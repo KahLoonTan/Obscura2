@@ -1474,7 +1474,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 8e11015f580668a499e5c000de061440, type: 3}
   mFont: {fileID: 0}
-  mText: Obscura
+  mText: Obscura II
   mFontSize: 100
   mFontStyle: 0
   mEncoding: 1

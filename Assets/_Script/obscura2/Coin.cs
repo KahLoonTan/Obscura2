@@ -3,15 +3,10 @@ using System.Collections;
 
 public class Coin : MonoBehaviour {
 	StatsController sc;
-	public bool isTouched = false;
-	CoinManager coinManager;
-	public bool toMirror = false;
-	public Vector3 playerMovement = Vector3.zero;
 
 	// Use this for initialization
 	void Start () {
 		sc = GameObject.Find("PlayerStats").GetComponent<StatsController>();
-		coinManager = GameObject.Find ("CoinManager").GetComponent<CoinManager> ();
 		//coin = PlayerPrefs.GetInt ("Coins");
 	}
 	
@@ -21,17 +16,10 @@ public class Coin : MonoBehaviour {
 
 	}
 
-	public void updatePosition(){
-
-		Vector3 mirrorPlayer = coinManager.playerPos;
-		toMirror = coinManager.toMirror;
-		if (toMirror==true) {
-			mirrorPlayer.x = (-playerMovement.x);
-			mirrorPlayer.y = playerMovement.y;
-			mirrorPlayer.z = (-playerMovement.z);
-			Vector3 finalPos = transform.position + mirrorPlayer;
-			this.transform.position = Vector3.MoveTowards(transform.position, finalPos, 10*Time.deltaTime);
-			toMirror = false;
+	void OnTriggerEnter(Collider other){
+		if (other.gameObject.tag == "Player") {
+			setCoin ();
+			destroyCoin ();
 		}
 	}
 

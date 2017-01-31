@@ -119,7 +119,7 @@ public class GameController : MonoBehaviour {
 		if(gameOver || captured){
 			gameOverTime ++;
 			if( gameOver && Input.GetMouseButtonDown(0) && gameOverTime>=60){
-				Application.LoadLevel("MainMenu");
+				Application.LoadLevel("LevelSelection");
 			}
 			if(captured && Input.GetMouseButtonDown(0)){
 				capturedLabel.SetActive(false);

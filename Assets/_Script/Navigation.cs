@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Navigation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
-
+		Time.timeScale = 1;
 	}
 	void restart(){
 		Application.LoadLevel(Application.loadedLevel);
@@ -30,7 +31,14 @@ public class Navigation : MonoBehaviour {
 	public void levelSelection(){
 		Application.LoadLevel ("LevelSelection");
 	}
-	public void game(){
-		Application.LoadLevel ("GameLevel");
+	public void libraryLevel(){
+		Application.LoadLevel ("Library");
+	}
+	public void forestLevel(){
+		Application.LoadLevel ("DarkForest");
+	}
+	public void cityLevel(){
+		//Application.LoadLevel ("ForgottenTown");
+		SceneManager.LoadScene ("ForgottenTown");
 	}
 }
