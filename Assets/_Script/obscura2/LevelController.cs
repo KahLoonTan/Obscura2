@@ -189,13 +189,13 @@ public class LevelController : MonoBehaviour {
 		switch (unlocked) {
 		case true:
 			
-			confirmationText = "You will enter " + type + "\nProceed?";
+			confirmationText = "You will enter <color=green>" + type + "</color>\nProceed?";
 			confirmationPanel.SetActive(true);
 			confirmObjText.text = confirmationText;
 			break;
 		case false:
 			string place = PlayerPrefs.GetString ("Place");
-			confirmationText = "You are near " + place + "\nYou will enter " + type + "\nProceed?";
+			confirmationText = "You are near <color=blue>" + place + "</color>\nYou will enter <color=green>" + type + "</color>\nProceed?";
 			confirmationPanel.SetActive (true);
 			confirmObjText.text = confirmationText;
 			break;

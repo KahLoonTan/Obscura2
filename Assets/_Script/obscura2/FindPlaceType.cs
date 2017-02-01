@@ -49,7 +49,7 @@ public class FindPlaceType : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 		//locationData = gpsText.GetComponent<Text> ();
-
+		yield return new WaitForSeconds(5f);
 		StartCoroutine ("getType");
 		while(Input.location.isEnabledByUser){
 			yield return new WaitForSeconds(1f);
@@ -66,32 +66,29 @@ public class FindPlaceType : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-		//if (latitude != 0 && longitude != 0) {
 
-			string url= String.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0},{1}&radius=100&key={2}",latitude,longitude,API);
-			WWW www = new WWW (url);
-			yield return www;
 
-			LevelController.webData = www.text.ToLower ();
-			/*if(wwwData.Contains("park")){
-				PlayerPrefs.SetInt("Park",1);
-			}
-			if(wwwData.Contains("airport")){
-				PlayerPrefs.SetInt("Airport",1);
-			}
-			if(wwwData.Contains("point_of_interest")||(wwwData.Contains("shopping_mall"))||(wwwData.Contains("store"))||(wwwData.Contains("convenience_store"))){
-				PlayerPrefs.SetInt ("City", 1);
-			}
-			if (wwwData.Contains ("sublocality_level") || wwwData.Contains ("sublocality") || wwwData.Contains ("establishment") || wwwData.Contains ("lodging") || wwwData.Contains ("locality")) {
-				PlayerPrefs.SetInt ("Village", 1);
-			}
-			Debug.Log (wwwData.Contains ("sublocality_level") || wwwData.Contains ("sublocality") || wwwData.Contains ("establishment") || wwwData.Contains ("lodging") || wwwData.Contains ("locality"));	
-			callGetPlace=false;
-			*/
-		//}
+		string url= String.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0},{1}&radius=100&key={2}",latitude,longitude,API);
+		WWW www = new WWW (url);
+		yield return www;
 
-		locationData.text = "Latitude -> " + latitude + "\n" + "Longitude -> " + longitude;
+		LevelController.webData = www.text.ToLower ();
 
+		if (LevelController.webData.Contains ("university")) {
+			locationData.text = "You are near a <color=green>University</color>\nYou can now unlock <color=blue>The Library</color>";
+		} else if (LevelController.webData.Contains ("library")) {
+			locationData.text = "You are near a <color=green>Library</color>\nYou can now unlock <color=blue>The Library</color>";
+		} else if (LevelController.webData.Contains ("school")) {
+			locationData.text = "You are near a <color=green>School</color>\nYou can now unlock <color=blue>The Library</color>";
+		}else if (LevelController.webData.Contains ("campground")) {
+			locationData.text = "You are near a <color=green>Campground</color>\nYou can now unlock <color=blue>Dark Forest</color>";
+		} else if (LevelController.webData.Contains ("park")) {
+			locationData.text = "You are near a <color=green>Park</color>\nYou can now unlock <color=blue>Dark Forest</color>";
+		}else { //city and other
+			locationData.text = "You are near a <color=green>City</color>\nYou can now unlock <color=blue>Forgotten Town</color>";
+		}
+		locationData.text += "\nLatitude -> " + latitude + "\n" + "Longitude -> " + longitude;
+		locationData.supportRichText = false;
 
 		//bool political = www.text.ToLower().Contains("political");
 		//Debug.Log (political);
@@ -119,12 +116,14 @@ public class FindPlaceType : MonoBehaviour {
 		Color bgColor = new Color (0, 0, 0, 0.6f);
 
 		if (locationData.color.a == 0) {
+			locationData.supportRichText = true;
 			locationData.color = textColor;
 			locationBg.color = bgColor;
 			locationBg.raycastTarget = true;
 			locationData.raycastTarget = true;
 
 		} else {
+			locationData.supportRichText = false;
 			locationData.color = Color.clear;
 			locationBg.color = Color.clear;
 			locationBg.raycastTarget = false;

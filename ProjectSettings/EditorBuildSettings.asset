@@ -24,6 +24,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scene/ForgottenTown.unity
   - enabled: 1
-    path: Assets/_Scene/GameLevel.unity
-  - enabled: 1
     path: Assets/_Scene/Library.unity
+  - enabled: 1
+    path: Assets/_Scene/DarkForest.unity
