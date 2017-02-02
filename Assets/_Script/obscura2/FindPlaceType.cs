@@ -88,7 +88,12 @@ public class FindPlaceType : MonoBehaviour {
 			locationData.text = "You are near a <color=green>City</color>\nYou can now unlock <color=blue>Forgotten Town</color>";
 		}
 		locationData.text += "\nLatitude -> " + latitude + "\n" + "Longitude -> " + longitude;
-		locationData.supportRichText = false;
+		if (locationData.color.a == 0) {
+			locationData.supportRichText = false;
+		} else if(locationData.color.a != 0){
+			locationData.supportRichText = true;
+		}
+
 
 		//bool political = www.text.ToLower().Contains("political");
 		//Debug.Log (political);
