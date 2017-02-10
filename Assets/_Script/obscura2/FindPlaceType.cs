@@ -50,6 +50,7 @@ public class FindPlaceType : MonoBehaviour {
 		longitude = Input.location.lastData.longitude;
 		//locationData = gpsText.GetComponent<Text> ();
 		yield return new WaitForSeconds(5f);
+
 		StartCoroutine ("getType");
 		while(Input.location.isEnabledByUser){
 			yield return new WaitForSeconds(1f);
@@ -66,7 +67,7 @@ public class FindPlaceType : MonoBehaviour {
 		latitude = Input.location.lastData.latitude;
 		longitude = Input.location.lastData.longitude;
 
-
+		StartCoroutine ("getDistance");
 
 		string url= String.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0},{1}&radius=100&key={2}",latitude,longitude,API);
 		WWW www = new WWW (url);
@@ -75,17 +76,17 @@ public class FindPlaceType : MonoBehaviour {
 		LevelController.webData = www.text.ToLower ();
 
 		if (LevelController.webData.Contains ("university")) {
-			locationData.text = "You are near a <color=green>University</color>\nYou can now unlock <color=blue>The Library</color>";
+			locationData.text = "You are near a <color=lime>University</color>\nYou can now unlock <color=cyan>The Library</color>";
 		} else if (LevelController.webData.Contains ("library")) {
-			locationData.text = "You are near a <color=green>Library</color>\nYou can now unlock <color=blue>The Library</color>";
+			locationData.text = "You are near a <color=lime>Library</color>\nYou can now unlock <color=cyan>The Library</color>";
 		} else if (LevelController.webData.Contains ("school")) {
-			locationData.text = "You are near a <color=green>School</color>\nYou can now unlock <color=blue>The Library</color>";
+			locationData.text = "You are near a <color=lime>School</color>\nYou can now unlock <color=cyan>The Library</color>";
 		}else if (LevelController.webData.Contains ("campground")) {
-			locationData.text = "You are near a <color=green>Campground</color>\nYou can now unlock <color=blue>Dark Forest</color>";
+			locationData.text = "You are near a <color=lime>Campground</color>\nYou can now unlock <color=cyan>Dark Forest</color>";
 		} else if (LevelController.webData.Contains ("park")) {
-			locationData.text = "You are near a <color=green>Park</color>\nYou can now unlock <color=blue>Dark Forest</color>";
+			locationData.text = "You are near a <color=lime>Park</color>\nYou can now unlock <color=cyan>Dark Forest</color>";
 		}else { //city and other
-			locationData.text = "You are near a <color=green>City</color>\nYou can now unlock <color=blue>Forgotten Town</color>";
+			locationData.text = "You are near a <color=lime>City</color>\nYou can now unlock <color=cyan>Forgotten Town</color>";
 		}
 		locationData.text += "\nLatitude -> " + latitude + "\n" + "Longitude -> " + longitude;
 		if (locationData.color.a == 0) {
@@ -106,14 +107,29 @@ public class FindPlaceType : MonoBehaviour {
 
 			yield return new WaitForSeconds (1f);
 		}
-		if(oldLat!=0&&oldLon!=0)
-		lc.setDistance(distanceCalc (oldLat, latitude, oldLon, longitude));
+
 		//yield return new WaitUntil(()=> (oldLat != lat || oldLon != lon));
 		yield return new WaitForSeconds(30);
 		yield return  StartCoroutine (getType());
 	}
 
+	IEnumerator getDistance(){
+		latitude = Input.location.lastData.latitude;
+		longitude = Input.location.lastData.longitude;
+		oldLat = latitude;
+		oldLon = longitude;
+		while (oldLat == latitude && oldLon == longitude) {
+			latitude = Input.location.lastData.latitude;
+			longitude = Input.location.lastData.longitude;
 
+			yield return new WaitForSeconds (1f);
+		}
+		if (oldLat != 0 && oldLon != 0) {
+			lc.setDistance(distanceCalc (oldLat, latitude, oldLon, longitude));
+		}
+		yield return new WaitForSeconds (5f);
+		yield return StartCoroutine (getDistance ());
+	}
 
 
 	public void textOnOff(){
@@ -139,7 +155,8 @@ public class FindPlaceType : MonoBehaviour {
 	public float distanceCalc(float oldlat, float newlat, float oldlon, float newlon){
 		float dlon = newlon - oldlon;
 		float dlat = newlat - oldlat;
-		float a = Mathf.Pow (Mathf.Pow (Mathf.Sin (dlat / 2f), 2f) + Mathf.Cos (oldlat) * Mathf.Cos (newlat) * (Mathf.Sin (dlon / 2f)), 2f);
+		float a = Mathf.Pow (Mathf.Pow (Mathf.Sin (dlat / 2f), 2f) + 
+			Mathf.Cos (oldlat) * Mathf.Cos (newlat) * (Mathf.Sin (dlon / 2f)), 2f);
 		float c = 2 * Mathf.Atan2 (Mathf.Sqrt (a), Mathf.Sqrt (1 - a));
 		Debug.Log (6371 * c);
 		return 6371 * c;

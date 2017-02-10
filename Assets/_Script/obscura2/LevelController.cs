@@ -14,8 +14,11 @@ public class LevelController : MonoBehaviour {
 	public GameObject backButton;
 	public GameObject proceedButton;
 	public GameObject cancelButton;
+	public GameObject area4Lock;
 	public Text confirmObjText;
 	string confirmationText;
+	string a4Type;
+	
 	void Start () {
 
 		PlayerPrefs.SetString ("Area", "0");
@@ -25,11 +28,17 @@ public class LevelController : MonoBehaviour {
 		PlayerPrefs.SetString ("AreaConfirm1", "True");
 		PlayerPrefs.SetString ("AreaConfirm2", "True");
 		PlayerPrefs.SetString ("AreaConfirm3", "True");
+
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		a4Type = PlayerPrefs.GetString ("Area4");
+
+		if (a4Type == "DarkForest" || a4Type == "Library" || a4Type == "ForgottenTown") {
+			area4Lock.SetActive (false);
+		}
 	}
 
 
@@ -169,7 +178,7 @@ public class LevelController : MonoBehaviour {
 		string areaNum = PlayerPrefs.GetString ("Area");
 		string type = PlayerPrefs.GetString ("Area" + areaNum);
 		PlayerPrefs.SetString ("AreaConfirm" + areaNum, "True");
-		confirmObjText.text = "Loading <color=lime>" + type + "</color>\nPlease wait...";
+		confirmObjText.text = "Loading <color=green>" + type + "</color>\nPlease wait...";
 		proceedButton.SetActive (false);
 		cancelButton.SetActive (false);
 		backButton.SetActive (false);
@@ -198,7 +207,7 @@ public class LevelController : MonoBehaviour {
 		switch (unlocked) {
 		case true:
 			
-			confirmationText = "You will enter <color=lime>" + type + "</color>\nProceed?";
+			confirmationText = "You will enter <color=green>" + type + "</color>\nProceed?";
 			confirmationPanel.SetActive (true);
 			proceedButton.SetActive(true);
 			cancelButton.SetActive(true);
@@ -206,7 +215,7 @@ public class LevelController : MonoBehaviour {
 			break;
 		case false:
 			string place = PlayerPrefs.GetString ("Place");
-			confirmationText = "You are near <color=cyan>" + place + "</color>\nYou will enter <color=lime>" + type + "</color>\nProceed?";
+			confirmationText = "You are near <color=blue>" + place + "</color>\nYou will enter <color=green>" + type + "</color>\nProceed?";
 			confirmationPanel.SetActive (true);
 			proceedButton.SetActive(true);
 			cancelButton.SetActive(true);
@@ -226,8 +235,9 @@ public class LevelController : MonoBehaviour {
 
 	}
 
-	public void resetDistance(){
+	public void resetData(){
 		PlayerPrefs.SetFloat ("Distance", 0);
+		PlayerPrefs.SetString ("Area4", "");
 	}
 
 	public void setDistanceFull(){

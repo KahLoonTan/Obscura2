@@ -515,6 +515,7 @@ MonoBehaviour:
   backButton: {fileID: 1215621681}
   proceedButton: {fileID: 1203261881}
   cancelButton: {fileID: 362284955}
+  area4Lock: {fileID: 1869282701}
   confirmObjText: {fileID: 507116471}
 --- !u!1 &193671969
 GameObject:
@@ -1947,7 +1948,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 174286434}
-        m_MethodName: resetDistance
+        m_MethodName: resetData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
