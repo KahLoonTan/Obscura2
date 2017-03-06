@@ -10,14 +10,21 @@ public class AdjustSlider : MonoBehaviour {
 	float currDistance;
 	void Start () {
 		currDistance = PlayerPrefs.GetFloat ("Distance");
-		slider.value = currDistance;
-		distanceRemaining.text = "Distance Remaining:\n" + (50 - currDistance);
+		slider.value = currDistance*1000;
+		distanceRemaining.text = "Distance Remaining:\n" + (0.05f - currDistance)*1000 + "meters";
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		currDistance = PlayerPrefs.GetFloat ("Distance");
-		slider.value = currDistance;
-		distanceRemaining.text = "Distance Remaining:\n" + (50 - currDistance);
+		if (currDistance >= 0.05) {
+			slider.value = 0.05f * 1000;
+			distanceRemaining.text = "Level is now \nunlockable";
+		} else {
+			slider.value = currDistance*1000;
+			distanceRemaining.text = "Distance Remaining:\n" + (0.05f - currDistance)*1000 + "meters";
+		}
+
 	}
+
 }

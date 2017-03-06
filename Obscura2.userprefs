@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Script\obscura2\LevelController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Script\obscura2\AdjustSlider.cs">
     <Files>
-      <File FileName="Assets\_Script\obscura2\EnterCamera.cs" Line="23" Column="55" />
+      <File FileName="Assets\_Script\obscura2\LevelController.cs" Line="255" Column="40" />
+      <File FileName="Assets\_Script\obscura2\EnterCamera.cs" Line="1" Column="1" />
       <File FileName="Assets\_Script\obscura2\Floating.cs" Line="1" Column="1" />
-      <File FileName="Assets\_Script\obscura2\FindPlaceType.cs" Line="70" Column="34" />
-      <File FileName="Assets\_Script\obscura2\LevelController.cs" Line="240" Column="39" />
-      <File FileName="Assets\_Script\obscura2\CharacterMovement.cs" Line="183" Column="3" />
-      <File FileName="Assets\_Script\obscura2\TouchReceiver.cs" Line="44" Column="29" />
-      <File FileName="Assets\_Script\Navigation.cs" Line="30" Column="3" />
+      <File FileName="Assets\_Script\obscura2\FindPlaceType.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Script\obscura2\CharacterMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Script\obscura2\TouchReceiver.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Script\Navigation.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Script\obscura2\AdjustSlider.cs" Line="22" Column="45" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -2768,7 +2768,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Area will start the game depends on where you are.
 
-    Unlock next area by travelling 100 meters.'
+    Unlock next area by travelling 50 meters.'
 --- !u!222 &1471085096
 CanvasRenderer:
   m_ObjectHideFlags: 0

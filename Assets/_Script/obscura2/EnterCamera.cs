@@ -11,7 +11,7 @@ public class EnterCamera : MonoBehaviour {
 	string loadingText;
 	// Use this for initialization
 	void Start () {
-		loadingText = "Start Camera...";
+		loadingText = "Starting Camera...";
 	}
 	
 	// Update is called once per frame

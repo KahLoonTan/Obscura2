@@ -17,7 +17,7 @@ public class LevelController : MonoBehaviour {
 	public GameObject area4Lock;
 	public Text confirmObjText;
 	string confirmationText;
-	string a4Type;
+	string a4LockStatus;
 	
 	void Start () {
 
@@ -34,10 +34,12 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		a4Type = PlayerPrefs.GetString ("Area4");
+		a4LockStatus = PlayerPrefs.GetString ("Area4Lock");
 
-		if (a4Type == "DarkForest" || a4Type == "Library" || a4Type == "ForgottenTown") {
+		if (a4LockStatus == "unlock") {
 			area4Lock.SetActive (false);
+		} else if (a4LockStatus == "lock") {
+			area4Lock.SetActive (true);
 		}
 	}
 
@@ -135,11 +137,14 @@ public class LevelController : MonoBehaviour {
 
 
 	}
-	public void area4(){
+	public void area4(){Debug.Log (PlayerPrefs.GetString ("Area4"));
+		Debug.Log (PlayerPrefs.GetString ("AreaConfirm4"));
 		if (webData.Contains ("empty")) {
 			confirmationPanel.SetActive (true);
 			confirmObjText.text = "Still initializing\nCheck \"Location\" for status";
 			backButton.SetActive (true);
+			proceedButton.SetActive (false);
+			cancelButton.SetActive (false);
 		} else {
 			string type = PlayerPrefs.GetString ("Area4");
 			PlayerPrefs.SetString ("Area", "4");
@@ -187,14 +192,16 @@ public class LevelController : MonoBehaviour {
 	}
 
 	public void cancelMap(){
-		if (backButton.activeSelf == true) {
-			backButton.SetActive(false);
-		} else {
-			string areaNum = PlayerPrefs.GetString ("Area");
-			if (PlayerPrefs.GetString ("AreaConfirm" + areaNum) != "True") {
-				PlayerPrefs.SetString ("Area" + areaNum, "Null");
-			}
+		
+			
+		string areaNum = PlayerPrefs.GetString ("Area");
+
+		if (PlayerPrefs.GetString ("AreaConfirm" + areaNum) != "True") {
+			PlayerPrefs.SetString ("Area" + areaNum, "Null");
+
 		}
+			
+		 
 
 
 		confirmationPanel.SetActive (false);
@@ -211,6 +218,7 @@ public class LevelController : MonoBehaviour {
 			confirmationPanel.SetActive (true);
 			proceedButton.SetActive(true);
 			cancelButton.SetActive(true);
+			backButton.SetActive (false);
 			confirmObjText.text = confirmationText;
 			break;
 		case false:
@@ -219,6 +227,7 @@ public class LevelController : MonoBehaviour {
 			confirmationPanel.SetActive (true);
 			proceedButton.SetActive(true);
 			cancelButton.SetActive(true);
+			backButton.SetActive (false);
 			confirmObjText.text = confirmationText;
 			break;
 		}
@@ -238,16 +247,21 @@ public class LevelController : MonoBehaviour {
 	public void resetData(){
 		PlayerPrefs.SetFloat ("Distance", 0);
 		PlayerPrefs.SetString ("Area4", "");
+		PlayerPrefs.SetString ("AreaConfirm4", "false");
+		PlayerPrefs.SetString ("Area4Lock", "lock");
 	}
 
 	public void setDistanceFull(){
-		PlayerPrefs.SetFloat ("Distance", 50);
+		PlayerPrefs.SetFloat ("Distance", 0.05f);
 	}
 
 	public void unlockLevel(){
 		GameObject lockGO = GameObject.Find ("LockA4_button");
-		if ( PlayerPrefs.GetFloat ("Distance") >= 50f) {
+		if ( PlayerPrefs.GetFloat ("Distance") >= 0.05f) {
 			lockGO.SetActive (false);
+			PlayerPrefs.SetString ("Area4Lock", "unlock");
+			PlayerPrefs.SetFloat ("Distance", 0);
+
 		}
 	}
 }

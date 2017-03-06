@@ -153,12 +153,14 @@ public class FindPlaceType : MonoBehaviour {
 	}
 
 	public float distanceCalc(float oldlat, float newlat, float oldlon, float newlon){
-		float dlon = newlon - oldlon;
-		float dlat = newlat - oldlat;
-		float a = Mathf.Pow (Mathf.Pow (Mathf.Sin (dlat / 2f), 2f) + 
-			Mathf.Cos (oldlat) * Mathf.Cos (newlat) * (Mathf.Sin (dlon / 2f)), 2f);
-		float c = 2 * Mathf.Atan2 (Mathf.Sqrt (a), Mathf.Sqrt (1 - a));
-		Debug.Log (6371 * c);
+		newlat = (22/7)/180*newlat;
+		oldlat = (22/7)/180*oldlat;
+		float dlon = (newlon - oldlon)*(22/7)/180;
+		float dlat = (newlat - oldlat)*(22/7)/180;
+		float a = Convert.ToSingle( System.Math.Sin (dlat / 2f)*System.Math.Sin (dlat / 2f) + 
+			System.Math.Cos (oldlat) * System.Math.Cos (newlat) * (System.Math.Sin (dlon / 2f)*(System.Math.Sin (dlon / 2f))));
+		float c = Convert.ToSingle(2 * System.Math.Atan2 (System.Math.Sqrt (a), System.Math.Sqrt (1 - a)));
+
 		return 6371 * c;
 	}
 }
